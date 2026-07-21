@@ -6,8 +6,19 @@ services:
 
 54327:5432
   environment:
-POSTGRES_PASSWORD=wp@010605
-POSTGRES_USER=wattanapat
-POSTGRES_DB=wattanapat
+POSTGRES_PASSWORD=chyada@01234
+POSTGRES_USER=chyada
+POSTGRES_DB=chyada
 volumes:
 ./data:/var/lib/postgresql/data
+  admin:
+    image: dpage/pgadmin4
+    container_name: 69-s1-admin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: chyada-k@rmutp.ac.th
+      PGADMIN_DEFAULT_PASSWORD: chyada@01234
+    ports:
+
+"8080:80"
+  depends_on:
+db\
